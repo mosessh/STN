@@ -1,0 +1,51 @@
+{
+    "name": "smodav/africastalking",
+    "description": "Africa's Talking API package",
+    "type": "library",
+    "keywords": ["sms", "ussd", "calls", "africas talking", "airtime", "payments", "voice", "token"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SmoDav",
+            "email": "smodavprivate@gmail.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/AfricasTalking/Support/helpers.php"
+        ],
+        "psr-4": {
+            "SmoDav\\AfricasTalking\\": "src/AfricasTalking/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "SmoDav\\AfricasTalking\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^5.0 || ^6.0 || ^7.0 || ^8.0",
+        "africastalking/africastalking": "^2.3 || ^3.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "~5.7|~6.2|~8.0|~9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmoDav\\AfricasTalking\\Laravel\\ServiceProvider"
+            ],
+            "aliases": {
+                "Airtime": "SmoDav\\AfricasTalking\\Laravel\\Facades\\Airtime",
+                "Application": "SmoDav\\AfricasTalking\\Laravel\\Facades\\Application",
+                "Payments": "SmoDav\\AfricasTalking\\Laravel\\Facades\\Payments",
+                "SMS": "SmoDav\\AfricasTalking\\Laravel\\Facades\\SMS",
+                "Token": "SmoDav\\AfricasTalking\\Laravel\\Facades\\Token",
+                "Voice": "SmoDav\\AfricasTalking\\Laravel\\Facades\\Voice"
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}
